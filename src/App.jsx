@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from './components/Button.jsx';
 import axios from 'axios';
 class App extends Component {
   constructor() {
@@ -25,7 +26,7 @@ render() {
         <p className="App-intro">
           :)
         </p>
-   
+        <Button handleClick={this.handleClick}/>
         <p><b>Username:</b></p>
         <p>{this.state.username}</p>
         <b>Info called:</b>
