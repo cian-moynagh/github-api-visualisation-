@@ -1,22 +1,32 @@
 import React, { Component } from 'react';
-import Button from './components/Button.jsx';
 import axios from 'axios';
+import Form from './components/Form.jsx';
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      username: 'No username',
-      info: ''
+      gitun: 'No username',
+      info: '',
+      formData: {
+        username: '',
+      }
     }
-    this.handleClick = this.handleClick.bind(this)
+    this.handleUserFormSubmit = this.handleUserFormSubmit.bind(this);
+    this.handleFormChange= this.handleFormChange.bind(this);
   }
-handleClick(e) {
-    axios.get('https://api.github.com/users/esjmb')
+handleUserFormSubmit(event) {
+    event.preventDefault();
+    axios.get('https://api.github.com/users/'+this.state.formData.username)
     .then(response => this.setState({
-      username: response.data.login,
+      gitun: response.data.login,
       info : JSON.stringify(response.data, undefined, 2)
-    }));
-  }
+    })).catch((err) => { console.log(err); });
+  };
+handleFormChange(event) {
+    const obj = this.state.formData;
+    obj[event.target.name] = event.target.value;
+    this.setState(obj);
+  };
 render() {
     return (
       <div className="App">
@@ -26,12 +36,16 @@ render() {
         <p className="App-intro">
           :)
         </p>
-        <Button handleClick={this.handleClick}/>
+        <Form
+          formData={this.state.formData}
+          handleUserFormSubmit={this.handleUserFormSubmit}
+          handleFormChange={this.handleFormChange}
+        />
         <p><b>Username:</b></p>
-        <p>{this.state.username}</p>
-        <b>Info called:</b>
+        <p>{this.state.gitun}</p>
+        <b>Info Called:</b>
         <pre>{this.state.info}</pre>
-      </div>
+</div>
     );
   }
 }
