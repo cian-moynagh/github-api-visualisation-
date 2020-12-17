@@ -7,7 +7,13 @@ const imgStye = {
 };
 const ProfileDetails = (props) => {
     return (
-      <div>       
+      <div>   
+        <div>
+          {props.infoclean.avatar_url ?
+            <img src={props.infoclean.avatar_url}
+                 alt="Profile"
+                 style={imgStye}/> : null }
+        </div>
         <div>
           {props.infoclean.name ? <div><p>Name:</p><p>{props.infoclean.name}</p></div> : null }
         </div>
@@ -40,7 +46,11 @@ const ProfileDetails = (props) => {
         </div>
         <div>
           {props.infoclean.html_url ? <div><p><a href={props.infoclean.html_url} target="_blank">View on GitHub</a></p></div> : null }
-        </div>        
+        </div>
+        <div>
+          {props.infoclean.login ? <div>{ <img src={"http://ghchart.rshah.org/"+props.infoclean.login} alt="Github chart" />
+        }<br/><a href="https://ghchart.rshah.org/" target="_blank">Source for GitHub Chart API</a></div> : null }
+        </div>    
       </div>
     )
 };
