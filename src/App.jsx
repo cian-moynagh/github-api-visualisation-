@@ -121,12 +121,12 @@ render() {
 
                             <ProfileDetails infoclean={this.state.infoclean} />
                             <hr></hr>
-                            <p style={{ color: "rgb(30, 203, 37)" }}> <b> Personal Language Count:</b></p>
+                            <p style={{ color: "rgb(30, 203, 37)" }}> <b> Personal Language Split:</b></p>
                             <div className = "LangList">
                                 <LanguageList langslist={this.state.replanguagecount} />
                                 </div>
                             <hr></hr>
-                            <p><b> Own Repositories</b></p>
+                            <p><b> Stars of this User's Repositories:</b></p>
                             <SortedList repitems={this.state.repitems} />
                             <hr></hr>
                             <p> <b> Starred Repositories:</b></p>

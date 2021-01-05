@@ -7,12 +7,15 @@ const PieChart = (props) => {
 
         <div class="pie"><Plot data={[
             {
+                marker: { color: "black" },
                 values: props.repoSize,
                 labels: props.repoNames,
                 type: 'pie'
             }
         ]}
-            layout={{ width: 800, height: 800 }}
+            layout={{ width: 500, height: 500,
+            paper_bgcolor: "#FFFFF"
+        }}
         />
         </div>
     );

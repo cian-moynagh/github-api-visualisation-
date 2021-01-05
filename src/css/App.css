@@ -1,6 +1,7 @@
+
 body {
     background-color: #000000;
-    /*background-image: linear-gradient(#BFD1E5, #EDB6F3, #AF8DF4)*/
+    background-image: linear-gradient(#BFD1E5, #EDB6F3, #AF8DF4)*/
 }
 
 .App {
@@ -18,7 +19,7 @@ body {
 
 .Headings {
     font-family: Calibri;
-    font-style: italic;
+
     color: rgb(30, 203, 37);
 }
 
@@ -30,7 +31,7 @@ body {
 }
 
 .LangList {
-    text-align: left;
+    text-align: center;
 }
 
 .Links {

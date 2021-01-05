@@ -22,7 +22,7 @@ const SortedList = (props) => {
               </div>
             )}
 
-            <ScatterPlot  y={watchers.split(',')} repo={repo.split(',')} label={'Watchers of repos'} />
+            <ScatterPlot  y={watchers.split(',')} repo={repo.split(',')}  />
             {watchers = ''}
             {repo = ''}
             {forks = ''}
